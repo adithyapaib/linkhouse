@@ -27,6 +27,8 @@ pre {
 }
 
 textarea {
+  max-width: 100%;
+  width: 100vw;
   background-color: transparent;
   resize: none;
   width: 100%;

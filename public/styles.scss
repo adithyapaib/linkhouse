@@ -25,7 +25,9 @@ body {
   }
   
   textarea {
-    background-color: transparent;
+    max-width: 100%;
+    width: 100vw;
+    background-color: transparent; 
     resize: none;
     width: 100%;
     padding: 0;
