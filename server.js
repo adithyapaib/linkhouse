@@ -1,8 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const Document = require("./models/Documents");
-const uri = "mongodb+srv://adithya:kDY3KKDJd89FhhSt@cluster0.amvxk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+require('dotenv').config()
+mongoose.connect(process.env.DB, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const app = express();
 app.use(express.urlencoded({ extended: true }));
@@ -15,13 +15,16 @@ app.get("/", (req, res) => {
 app.get("/new", (req, res) => {
   res.render("new");
 });
-let detectURLs = (string) =>{
-    let hello =  string.replace(/(\b(https?|ftp|file):\/\/[\-A-Z0-9+&@#\/%?=~_|!:,.;]*[\-A-Z0-9+&@#\/%=~_|])/img, '<a href="$1">$1</a>');
-    return hello;
-  }
+
+
+let detectURLs = async (string) => await string.replace(/(\b(https?|ftp|file):\/\/[\-A-Z0-9+&@#\/%?=~_|!:,.;]*[\-A-Z0-9+&@#\/%=~_|])/img, '</code> <a href="$1">$1</a> <code> </code>');
+
+
+
 app.post("/save", async (req, res) => {
-  let value = await req.body.value;
-  value = await detectURLs(value);
+let body = await req.body.value;
+body = await detectURLs(body);
+let value =  await `<code>${body} </code>`
   try {
     const document = await Document.create({ value });
     res.redirect(`/${document.id}`);
@@ -29,6 +32,10 @@ app.post("/save", async (req, res) => {
     res.render("new", { value });
   }
 });
+
+
+
+
 app.get("/:id", async (req, res) => {
   const id = req.params.id;
   try {
@@ -40,3 +47,6 @@ app.get("/:id", async (req, res) => {
 });
 
 app.listen(3000);
+
+/* 
+<!-- class="<%= locals.language ? `language-${locals.language}` : "" %> "> --> */

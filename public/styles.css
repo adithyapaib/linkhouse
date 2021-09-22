@@ -1,6 +1,7 @@
 body {
   background-color: #002b36;
   margin: 0;
+  max-width: 100% !important;
 }
 
 .wrapper {
@@ -9,6 +10,7 @@ body {
   display: flex;
   padding: 1rem .5rem;
   font-size: 1rem;
+  background-color: #080808;
 }
 
 pre {
@@ -29,14 +31,15 @@ pre {
 textarea {
   max-width: 100%;
   width: 100vw;
-  background-color: transparent;
+  background-color: #080808;
   resize: none;
   width: 100%;
   padding: 0;
   margin-left: 1rem;
-  color: #7D7D7D;
+  color: #ffffff;
   min-height: calc(100vh - 2rem);
   border: none;
+  font-size: 1em;
   outline: none;
 }
 
