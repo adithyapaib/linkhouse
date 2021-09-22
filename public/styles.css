@@ -2,6 +2,7 @@ body {
   background-color: #002b36;
   margin: 0;
   max-width: 100% !important;
+  font-family: 'Poppins', sans-serif;
 }
 
 .wrapper {
@@ -20,12 +21,18 @@ pre {
 #code-display {
   padding-top: 0;
   padding-bottom: 0;
+  color: #ffffff;
 }
 
 .line-numbers {
+  margin-top: 1em;
   color: #7D7D7D;
   font-family: monospace;
   text-align: end;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 textarea {
@@ -100,5 +107,13 @@ textarea {
 
 .btn:hover {
   background-color: #83E5FF;
+}
+
+* {
+  color: #ffffff !important;
+}
+
+p {
+  margin-left: 1em;
 }
 /*# sourceMappingURL=styles.css.map */

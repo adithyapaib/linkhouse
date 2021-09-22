@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,600;1,700;1,800&family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  max-width: 100%;
+  padding: 3em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #EDEDED;
+}
+
+.container {
+  width: 100%;
+  max-width: 95vw;
+  height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 1em;
+  background: #DA0037;
+  border-radius: 1em;
+  padding-left: 2em;
+}
+
+.container h2 {
+  font-weight: 800 bold;
+}
+
+.container .btn {
+  text-decoration: none;
+  background: #171717;
+  color: #EDEDED;
+  padding: 0.75em 1.5em;
+  margin-top: 3em;
+  border-radius: 3px;
+}
+
+.container .btn i {
+  font-size: 1em;
+  margin-left: 0.5em;
+  background: none;
+}
+/*# sourceMappingURL=index.css.map */
