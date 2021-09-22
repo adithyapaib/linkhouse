@@ -26,28 +26,54 @@ let detectURLs = async (string) => await string.replace(/(\b(https?|ftp|file):\/
 
 app.post("/save", async (req, res) => {
 let body = await req.body.value;
-body = await detectURLs(body);
+let username = await req.body.username;
+console.log(body);
+body = await detectURLs(body)
+body = await body.replace(/\n/g, '<br>');
 let value =  await `<p class="saved" >${body} </p>`
   try {
-    const document = await Document.create({ value });
-    res.redirect(`/${document.id}`);
+    const document = await Document.create({ value: value , username: username });
+    res.redirect(`/${document.username}`);
   } catch {
     res.render("new", { value });
   }
 });
 
-
-
-
 app.get("/:id", async (req, res) => {
-  const id = req.params.id;
-  try {
-    const document = await Document.findById(id);
+  let id = req.params.id;
+  let document = await Document.findOne({username: id})
+  if(document){
     res.render("code-display", { code: document.value });
-  } catch (e) {
-    res.render("/");
   }
+  else{
+    res.redirect("/");
+  }
+  
+
 });
+
+
+app.get("/user/:id", async (req, res) => {
+  const username = await req.params.id
+  let test = await Document.find({ username });
+  console.log(test)
+  if(test.length > 0){
+    res.json(true)
+  }
+  else{
+    res.json(false)
+  } 
+});
+
+app.get('/new/:id', async(req, res) => {
+  let username = await req.params.id
+  let test = await Document.find({ username });
+  if(test.length > 0)
+    return res.json('You are not supposed to be here :( ')
+  res.render("new", { username })
+})
+
+                    
 
 app.listen(3000);
 

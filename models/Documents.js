@@ -4,6 +4,10 @@ const documentSchema = new mongoose.Schema({
     {
         type : String,
         required : true
-    }
+    },
+    username :
+    {
+        type : String
+    },
 });
 module.exports = mongoose.model('Documents', documentSchema);

@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAADElEQVQI12P4//8/AAX+Av7czFnnAAAAAElFTkSuQmCC">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css"
@@ -12,25 +13,37 @@
       referrerpolicy="no-referrer"
     />
     <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
- <link rel="stylesheet" href="index.css" />
-  </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="index.css" />
+   </head>
   <body>
     <div class="container">
-    <h2>Get the shortest link for your bio !</h2>
-    <h4>
-    </h4>
-      
-        <a class="btn" href="/new"
-          >Create new <i class="bi bi-plus-square"></i
-        ></a>
-      
+      <h2>Get the shortest link for your bio !</h2>
+      <h4></h4>
+
+      <a class="btn" >Create new <i class="bi bi-plus-square"></i></a>
     </div>
+    <script>
+      document.querySelector(".btn").addEventListener("click", async function() {
+        let userId = prompt("Enter your user id");
+        let userRegistered = await fetch("/user/" + userId);
+        console.log(userRegistered);
+        userRegistered = await userRegistered.json();
+        if(userRegistered)
+        {
+          
+          alert("User already registered");
+        
+        }        
+        else{
+          window.location.href = "/new/" + userId;
+          
+        }
+        
+
+   
+
+      })
+    </script>
   </body>
 </html>
-
-
-
-
-
-
