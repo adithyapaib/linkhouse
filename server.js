@@ -69,7 +69,7 @@ app.get('/new/:id', async(req, res) => {
   let username = await req.params.id
   let test = await Document.find({ username });
   if(test.length > 0)
-    return res.json('You are not supposed to be here :( ')
+    return res.render("404")
   res.render("new", { username })
 })
 
