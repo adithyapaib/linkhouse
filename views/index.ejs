@@ -31,14 +31,16 @@
         .querySelector(".btn")
         .addEventListener("click", async function () {
           let userId = prompt("Enter a id for your space");
+          if (userId) {
           let userRegistered = await fetch("/user/" + userId);
           console.log(userRegistered);
           userRegistered = await userRegistered.json();
           if (userRegistered) {
-            alert("User already registered");
+            alert("The user space already exists ");
           } else {
             window.location.href = "/new/" + userId;
           }
+        }
         });
     </script>
   </body>
