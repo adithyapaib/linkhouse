@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const Document = require("./models/Documents");
 require("dotenv").config();
 
-//Middlewares
+//Middle-wares
 mongoose.connect(process.env.DB, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -37,10 +37,8 @@ app.get("/", (req, res) => {
 
 
 app.get("/new",async (req, res) => {
-  let r = await shortid(6);
-  let find = await Document.find({ username: r });
- if(find)res.redirect("/new/" + r);
-      res.redirect("/");
+  let short = shortid(6);
+  await res.render("new" , {username: short});
 });
 app.get("/new/:id", async (req, res) => {
   let username = await req.params.id;
