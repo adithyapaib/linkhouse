@@ -21,25 +21,10 @@ body {
   background-color: #171717;
 }
 
-pre {
-  margin: 0;
-}
-
 #code-display {
   padding-top: 0;
   padding-bottom: 0;
   color: #ffffff;
-}
-
-.line-numbers {
-  margin-top: 1em;
-  color: #7d7d7d;
-  font-family: monospace;
-  text-align: end;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
 }
 
 textarea {
@@ -56,48 +41,6 @@ textarea {
   font-size: 1em;
   outline: none;
   font-family: "Poppins" sans-serif !important;
-}
-
-.buttons-wrapper {
-  position: fixed;
-  top: 0;
-  right: 0;
-  opacity: 0.15;
-  -webkit-transition: opacity 200ms ease-in-out;
-  transition: opacity 200ms ease-in-out;
-  background-color: #0081a2;
-  padding: 1rem;
-}
-
-.buttons-wrapper:hover {
-  opacity: 1;
-}
-
-.logo {
-  font-size: 2rem;
-  text-align: center;
-  text-decoration: none;
-  color: white;
-  width: 100%;
-  display: inline-block;
-}
-
-.logo:hover {
-  text-decoration: underline;
-}
-
-.buttons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-top: 0.5rem;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.buttons > * + * {
-  margin-left: 0.25rem;
 }
 
 .btn {
@@ -208,7 +151,7 @@ p {
   background: #171717;
   font-family: "Poppins", sans-serif;
   padding: 1em;
-  font-size: 1.3em;
+  font-size: 0.9em;
   margin: 0;
 }
 
