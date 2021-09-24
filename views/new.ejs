@@ -7,20 +7,29 @@
   <link rel="stylesheet" href="/styles.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/autosize.js/5.0.0/autosize.min.js" integrity="sha512-zibtOTbkMuTivXGk5b8yJFGLIB1jF90NuV7gwNcVWL3xZx/I1HdkXU2pCZhadsuaS5HMUzabvRqK4WmWeKrwUg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <title>Editing <%= locals.username %> </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css" integrity="sha512-xnP2tOaCJnzp2d2IqKFcxuOiVCbuessxM6wuiolT9eeEJCyy0Vhcwa4zQvdrZNVqlqaxXhHqsSV1Ww7T2jSCUQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script language="javascript" type="text/javascript" src="/static/js/codemirror-5.62.0/lib/codemirror.js"></script>
+  <link rel="stylesheet" type="text/css" href="/static/js/codemirror-5.62.0/lib/codemirror.css"></link>
 </head>
 <body>
   <form action="/save" method="POST">
-    <%- include("_buttons.ejs", { canSave: true }) %>
+    <header class="newheader">
+     <span> <i class="bi bi-pencil-square" style="color: black;"></i><h1><%= locals.username %>  </h1></span>
+      <span><button class="btn" type="submit">Save <i class="bi bi-clipboard"></i></button>
+        <a href="/"><i class="bi bi-house-fill"></i></span></a>
+    </header>
     <div class="wrapper">
-      <div class="line-numbers">
-        &gt;
-      </div>
-      <textarea autofocus name="value"><%= locals.value %></textarea>
+      <textarea id="code" autofocus name="value" class="textarea"><%= locals.value %></textarea>
       <input type="text" style="display: none;" name="username" value=<%=locals.username%> > </div>
     </div>
   </form>
   <script>
     autosize(document.querySelector('textarea'))
+    var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
+    lineNumbers: true,
+    mode: 'text/x-perl',
+    matchBrackets: true,
+});
   </script>
 </body>
 </html>

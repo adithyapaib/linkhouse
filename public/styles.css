@@ -1,17 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,600;1,700;1,800&family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
 body {
-  background-color: #002b36;
+  background-color: #171717;
   margin: 0;
   max-width: 100% !important;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 1rem .5rem;
+  padding: 1rem 0.5rem;
   font-size: 1rem;
-  background-color: #080808;
+  background-color: #171717;
 }
 
 pre {
@@ -26,7 +33,7 @@ pre {
 
 .line-numbers {
   margin-top: 1em;
-  color: #7D7D7D;
+  color: #7d7d7d;
   font-family: monospace;
   text-align: end;
   -webkit-user-select: none;
@@ -54,10 +61,10 @@ textarea {
   position: fixed;
   top: 0;
   right: 0;
-  opacity: .15;
+  opacity: 0.15;
   -webkit-transition: opacity 200ms ease-in-out;
   transition: opacity 200ms ease-in-out;
-  background-color: #0081A2;
+  background-color: #0081a2;
   padding: 1rem;
 }
 
@@ -82,14 +89,14 @@ textarea {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
 .buttons > * + * {
-  margin-left: .25rem;
+  margin-left: 0.25rem;
 }
 
 .btn {
@@ -97,8 +104,8 @@ textarea {
   background: none;
   border: 1px solid #002b36;
   color: #002b36;
-  border-radius: .25rem;
-  padding: .25rem .5rem;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
   -webkit-transition: background-color 200ms ease-in-out;
   transition: background-color 200ms ease-in-out;
   display: inline-block;
@@ -106,7 +113,7 @@ textarea {
 }
 
 .btn:hover {
-  background-color: #83E5FF;
+  background-color: #83e5ff;
 }
 
 * {
@@ -130,5 +137,89 @@ p {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   padding: 1rem;
+}
+
+.newheader {
+  top: 0;
+  position: -webkit-sticky;
+  position: sticky;
+  background: #ffd523;
+  color: #2c2e43 !important;
+  max-width: 100%;
+  padding: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.newheader h1 {
+  margin-left: 0.5em;
+  color: #2c2e43 !important;
+  font-size: 1.5em;
+}
+
+.newheader span {
+  min-width: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.5em;
+}
+
+.newheader span .btn {
+  background: red;
+}
+
+.newheader span i {
+  margin-left: 1em;
+  color: #2c2e43 !important;
+}
+
+.newheader span .btn {
+  background: #0A1931;
+  font-size: 0.6em;
+  font-weight: 600;
+  padding: 0.5em 1em;
+}
+
+.newheader span .btn i {
+  color: whitesmoke !important;
+}
+
+.wrapper {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper .textarea {
+  background: #171717;
+  font-family: "Poppins", sans-serif;
+  padding: 1em;
+  font-size: 1.3em;
+  margin: 0;
+}
+
+::-webkit-scrollbar {
+  background: #171717;
+  padding: 10em;
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  margin: 2em;
+  background: #ffd523;
+  border-radius: 0.5em;
 }
 /*# sourceMappingURL=styles.css.map */

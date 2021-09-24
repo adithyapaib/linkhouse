@@ -83,7 +83,7 @@ app.get("/:id", async (req, res, next) => {
   let document = await Document.findOne({ username: id });
   if (document) {
     let code = await document.value;
-    await res.render("code-display", { code });
+    await res.render("code", { code , username: id});
   } else 
     next();
 });
