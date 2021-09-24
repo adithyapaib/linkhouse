@@ -55,6 +55,7 @@ textarea {
   border: none;
   font-size: 1em;
   outline: none;
+  font-family: "Poppins" sans-serif !important;
 }
 
 .buttons-wrapper {

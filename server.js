@@ -83,9 +83,9 @@ app.get("/:id", async (req, res, next) => {
   let document = await Document.findOne({ username: id });
   if (document) {
     let code = await document.value;
-    await res.render("code", { code , username: id});
+  return  await res.render("code", { code , username: id});
   } else 
-    next();
+  return  res.render("404");
 });
 app.get("/*", async (req, res) => res.render("404"));
 
