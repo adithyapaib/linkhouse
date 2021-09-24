@@ -28,7 +28,7 @@ var shortid = (length, chars) => {
   return str;
 };
 
-
+// Routes
 
 app.get("/", (req, res) => {
   res.render("index");
@@ -40,7 +40,7 @@ app.get("/new",async (req, res) => {
   let short = shortid(6);
   await res.render("new" , {username: short});
 });
-app.get("/new/:id", async (req, res) => {
+app.get("/new/:id", async (req, res) => {``
   let username = await req.params.id;
   res.render("new", { username });
 });
@@ -78,17 +78,16 @@ app.get("/user/:id", async (req, res) => {
   }
 });
 
-app.get("/:id", async (req, res) => {
+app.get("/:id", async (req, res, next) => {
   let id = await req.params.id;
   let document = await Document.findOne({ username: id });
   if (document) {
     let code = await document.value;
     await res.render("code-display", { code });
-  } else {
-    res.redirect("/");
-  }
+  } else 
+    next();
 });
-
+app.get("/*", async (req, res) => res.render("404"));
 
 
 app.listen(3000);
