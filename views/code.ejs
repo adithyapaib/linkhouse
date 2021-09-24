@@ -3,19 +3,36 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= locals.username  %> </title>
+    <title>Textspace  <%= locals.username  %> </title> 
     <link rel="stylesheet" href="/code.css" />
+    <meta name="theme-color" content="#ffd523">
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css" integrity="sha512-xnP2tOaCJnzp2d2IqKFcxuOiVCbuessxM6wuiolT9eeEJCyy0Vhcwa4zQvdrZNVqlqaxXhHqsSV1Ww7T2jSCUQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="shortcut icon" href="https://img.icons8.com/emoji/48/000000/globe-showing-americas-emoji.png" type="image/x-icon">
   </head>
   <body >
     <header class="newheader">
-        <span> <i class="bi bi-pencil-square" style="color: black;"></i><h1><%= locals.username %>  </h1></span>
-         <span><a href="/"><i class="bi bi-house-fill"></i></span></a>
+        <span> <i class="bi bi-back" style="color: black;"></i><h3><%= locals.username %>  </h3></span>
+         <span> <button class="copy" >Copy URL <i class="bi bi-clipboard"></i> </button>  <a href="/"><i class="bi bi-house-fill"></i></span></a>
        </header>
     <div class="wrapper"><p class="codeheader"><%- locals.code %></p></div>
+    <script>
+      var b = document.querySelector(".copy");
+      b.addEventListener("click", function() {
+        var inputc = document.body.appendChild(document.createElement("input"));
+inputc.value = window.location.href;
+inputc.focus();
+inputc.select();
+document.execCommand('copy');
+inputc.parentNode.removeChild(inputc);
+alert("URL Copied.");
+
+
+
+      });
+    </script>
   </body>
 </html>

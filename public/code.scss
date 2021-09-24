@@ -1,15 +1,20 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,600;1,700;1,800&family=Poppins:wght@300;400;500;600;700;800;900&display=swap");@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,600;1,700;1,800&family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap");
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   max-width: 100%;
 }
-    
+body {
+  background-color: #171717;
+}
+
 .newheader {
   top: 0;
   position: sticky;
+  z-index: 10000;
   background: #ffd523;
   color: #2c2e43 !important;
 
@@ -18,10 +23,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  h1 {
+  h3 {
     margin-left: 0.5em;
     color: #2c2e43 !important;
-    font-size: 1.5em;
+    font-size: 1em;
   }
   span {
     min-width: 10%;
@@ -32,41 +37,66 @@
     .btn {
       background: red;
     }
+    .copy {
+      background: #0a1931;
+      padding: 0.6em;
+      border-radius: 0.5em;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      outline: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      i {
+        color: #fff !important;
+      }
+    }
     i {
       margin-left: 1em;
       color: #2c2e43 !important;
     }
-    .btn 
-    {
-      background: #0A1931;
+    .btn {
+      background: #0a1931;
       font-size: 0.6em;
       font-weight: 600;
       padding: 0.5em 1em;
-      i 
-      {
-         color: whitesmoke !important;
+      i {
+        color: whitesmoke !important;
       }
     }
   }
 }
 
-.wrapper{
+.wrapper {
+  position: relative;
+  margin-top: 10em;
   padding: 1em;
   min-height: 100vh;
   max-width: 100% !important;
   background: #171717;
   color: whitesmoke;
-  p 
-  { 
+  p {
     max-width: 100vw !important;
 
     word-wrap: break-word;
-    a{
-      color: #ffd523;
+    a {
+      color: #41e033;
       text-decoration: none;
       &::after {
-        content: "↗";
+        content: " ↥";
       }
     }
   }
+}
+
+::-webkit-scrollbar {
+  background: #171717;
+  padding: 10em;
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  margin: 2em;
+  background: #ffd523;
+  border-radius: 0.5em;
 }
