@@ -22,15 +22,7 @@ require("dotenv").config();
 
 //Middle-wares
 (async function() {
-  connect('mongodb://localhost:27017/test');
-
-  const user: d = await G.create({
-    email: 'bill@microsoft.com',
-    firstName: 'Bill',
-    lastName: 'Gates'
-  });
-
-  console.log('Done');
+  connect(process.env.DB);
 })();
 
 
