@@ -53,21 +53,9 @@ require("dotenv").config();
 //Middle-wares
 (function () {
     return __awaiter(this, void 0, void 0, function () {
-        var user;
         return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    (0, mongoose_1.connect)('mongodb://localhost:27017/test');
-                    return [4 /*yield*/, G.create({
-                            email: 'bill@microsoft.com',
-                            firstName: 'Bill',
-                            lastName: 'Gates'
-                        })];
-                case 1:
-                    user = _a.sent();
-                    console.log('Done');
-                    return [2 /*return*/];
-            }
+            (0, mongoose_1.connect)(process.env.DB);
+            return [2 /*return*/];
         });
     });
 })();
