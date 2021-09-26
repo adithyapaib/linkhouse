@@ -1,47 +1,74 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,600;1,700;1,800&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,600;1,700;1,800&family=Poppins:wght@300;400;500;600;700;800;900&display=swap')
+$main: #5C7AEA
 *
     margin: 0
     padding: 0
     color: #fff
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif
 body
-    max-width: 100% 
-    padding: 3em
+    max-width: 100%
     display: flex
     justify-content: center
+    flex-direction: column
+    flex-wrap: wrap
     align-items: center
-    background: #ffd523
+    background: #171717
 .container
     width: 100%
-    max-width: 95vw
-    height: 90vh
+    height: 100vh
     display: flex
     flex-direction: column
     justify-content: center
-    align-items: flex-start
-    padding: 1em
+    align-items: center
     background: #171717
-    border-radius: 1em
-    padding-left: 2em
-    h2 
+    .top
+        height: 70%
+        width: 60%
+        display: flex
+        align-items: center
+        flex-direction: column
+        justify-content: center
+        z-index: 1000
+        background: rgba( 0, 0, 0, 0.45 )
+        box-shadow: 0 8px 32px 0 #4c51a05e
+        backdrop-filter: blur( 15.5px )
+        -webkit-backdrop-filter: blur( 15.5px )
+        border-radius: 10px
+        border: 1px solid #0000002e
+    h2
         font-weight: 800 bold
+    .wave
+        position: absolute
+        bottom: 0
+        z-index: 1
+        height: 50vh
+        max-width: 100%
+        overflow-x: hidden
 
-    .btn 
+    .btn
         text-decoration: none
-        background: #ffd523 
+        background: white
         color: #2c2e43
-        padding: 0.75em 1.5em 
-        margin-top: 3em 
+        padding: 0.75em 1.5em
+        margin-top: 3em
         border-radius: 3px
         font-weight: 600
-        i 
+        i
             color: #171717
             font-size: 1em
             margin-left: 0.5em
-            background: none    
+            background: none
 ::-webkit-scrollbar-thumb
     background-color: #2c2e43
     border-radius: 10px
 ::-webkit-scrollbar
     width: 10px
-    background-color: #ffd523
+    background-color: $main
+@media screen and (max-width: 768px) 
+    .container
+        .top
+          width: 90%
+          padding: 1em
+          word-wrap: break-word
+          text-align: center
+    

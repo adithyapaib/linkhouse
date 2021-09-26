@@ -133,21 +133,18 @@ app.post("/save", function (req, res) { return __awaiter(void 0, void 0, void 0,
                 return [4 /*yield*/, "<p class=\"saved\">" + body + " </p>"];
             case 5:
                 value = _a.sent();
-                return [4 /*yield*/, console.log("Value is " + value + "Username is " + username)];
+                _a.label = 6;
             case 6:
-                _a.sent();
-                _a.label = 7;
-            case 7:
-                _a.trys.push([7, 9, , 10]);
+                _a.trys.push([6, 8, , 9]);
                 return [4 /*yield*/, G.create({ username: username, value: value })];
-            case 8:
+            case 7:
                 d = _a.sent();
                 return [2 /*return*/, res.redirect("/" + d.username)];
-            case 9:
+            case 8:
                 err_1 = _a.sent();
                 res.render("404");
-                return [3 /*break*/, 10];
-            case 10: return [2 /*return*/];
+                return [3 /*break*/, 9];
+            case 9: return [2 /*return*/];
         }
     });
 }); });
@@ -161,7 +158,6 @@ app.get("/user/:id", function (req, res) { return __awaiter(void 0, void 0, void
                 return [4 /*yield*/, G.find({ username: username })];
             case 2:
                 test = _a.sent();
-                console.log(test);
                 if (test.length > 0) {
                     res.json(true);
                 }
@@ -196,5 +192,3 @@ app.get("/*", function (req, res) { return __awaiter(void 0, void 0, void 0, fun
     return [2 /*return*/, res.render("404")];
 }); }); });
 app.listen(3000);
-/*
-<!-- class="<%= locals.language ? `language-${locals.language}` : "" %> "> --> */

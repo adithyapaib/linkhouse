@@ -8,23 +8,27 @@
 
 body {
   max-width: 100%;
-  padding: 3em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #ffd523;
+  background: #171717;
 }
 
 .container {
   width: 100%;
-  max-width: 95vw;
-  height: 90vh;
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -35,22 +39,54 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  padding: 1em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background: #171717;
-  border-radius: 1em;
-  padding-left: 2em;
+}
+
+.container .top {
+  height: 70%;
+  width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.45);
+  -webkit-box-shadow: 0 8px 32px 0 #4c51a05e;
+          box-shadow: 0 8px 32px 0 #4c51a05e;
+  backdrop-filter: blur(15.5px);
+  -webkit-backdrop-filter: blur(15.5px);
+  border-radius: 10px;
+  border: 1px solid #0000002e;
 }
 
 .container h2 {
   font-weight: 800 bold;
 }
 
+.container .wave {
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  height: 50vh;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 .container .btn {
   text-decoration: none;
-  background: #ffd523;
+  background: white;
   color: #2c2e43;
   padding: 0.75em 1.5em;
   margin-top: 3em;
@@ -72,6 +108,15 @@ body {
 
 ::-webkit-scrollbar {
   width: 10px;
-  background-color: #ffd523;
+  background-color: #5C7AEA;
+}
+
+@media screen and (max-width: 768px) {
+  .container .top {
+    width: 90%;
+    padding: 1em;
+    word-wrap: break-word;
+    text-align: center;
+  }
 }
 /*# sourceMappingURL=index.css.map */

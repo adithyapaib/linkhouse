@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#5C7AEA">
     <link
       rel="icon"
       href="https://img.icons8.com/emoji/48/000000/flower-playing-cards.png"
@@ -25,28 +26,29 @@
   </head>
   <body>
     <div class="container">
-      <h2>Get the shortest link for your bio !</h2>
-      <h4></h4>
-
-      <a class="btn">Create new <i class="bi bi-plus-square"></i></a>
-     <span style="width: 100%; height: 10vh;"> <svg
+     
+      <div class="top">
+        <h2>Get the shortest link for your bio !</h2>
+        <a class="btn">Create new <i class="bi bi-plus-square"></i></a>
+       
+      </div>
+      <svg
       width="100%"
       height="100%"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
+      class="wave"
     >
       <defs></defs>
-      <path id="myID" d="" />
-    </svg></span>
+      <path id="feel-the-wave" d="" />
+    </svg>
     </div>
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+  
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/combine/npm/autosize@5.0.1,npm/wavify@1.0.0"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://rawgit.com/peacepostman/wavify/master/wavify.js"></script>
+    <script src="https://rawgit.com/peacepostman/wavify/master/jquery.wavify.js"></script>
     <script>
       document
         .querySelector(".btn")
@@ -64,14 +66,14 @@
               window.location.href = "/new/" + userId;
             }
           }
-          var myWave = wavify(document.querySelector("#myId"), {
-            height: 60,
-            bones: 3,
-            amplitude: 40,
-            color: "#ffffff",
-            speed: 0.25,
-          });
         });
+      var wave1 = $("#feel-the-wave").wavify({
+        height: 80,
+        bones: 4,
+        amplitude: 60,
+        color: "#5C7AEA",
+        speed: 0.25,
+      });
     </script>
   </body>
 </html>

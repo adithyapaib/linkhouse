@@ -74,7 +74,6 @@ app.post("/save", async (req: any, res: any) => {
   body = await detectURLs(body)
   body = await body.replace(/\n/g, '<br>')
   let value = await `<p class="saved">${body} </p>`
-  await console.log("Value is " + value + "Username is " + username)
   try {
     let d = await G.create({ username: username, value: value });
     return res.redirect(`/${d.username}`);
@@ -88,7 +87,6 @@ app.post("/save", async (req: any, res: any) => {
 app.get("/user/:id", async (req: any, res: any) => {
   const username = await req.params.id;
   let test = await G.find({ username });
-  console.log(test);
   if (test.length > 0) {
     res.json(true);
   } else {
@@ -109,6 +107,3 @@ app.get("/*", async (req, res: any) => res.render("404"));
 
 
 app.listen(3000);
-
-/* 
-<!-- class="<%= locals.language ? `language-${locals.language}` : "" %> "> --> */
