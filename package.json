@@ -4,12 +4,11 @@
   "description": "A Social media link share site",
   "main": "index.js",
   "scripts": {
-    "test": "npm run dev"
+    "test": "nodemon server.js"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Adithya Pai B",
+  "license": "MIT",
   "dependencies": {
-    "@adithyapaib/randshortid": "^1.0.0",
     "@types/mongoose": "^5.11.97",
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
